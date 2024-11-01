@@ -1,0 +1,2263 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost/ontologies/2024/10/11/edu_program#"
+     xml:base="http://localhost/ontologies/2024/10/11/edu_program"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://localhost/ontologies/2024/10/11/edu_program"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#baoGomMonHoc -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#baoGomMonHoc">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#chuyenNganh"/>
+        <rdfs:range rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>bao gồm môn học</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#coNoiDung -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#coNoiDung">
+        <rdfs:domain rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:range rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>có nội dung</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#hocTruoc -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#hocTruoc">
+        <rdfs:domain rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:range rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>học trước</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#noiDungCua -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#noiDungCua">
+        <rdfs:domain rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:range rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>nội dung của</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#songHanh -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#songHanh">
+        <rdfs:domain rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:range rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>song hành</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#thuocChuyenNganh -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#thuocChuyenNganh">
+        <rdfs:domain rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:range rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#chuyenNganh"/>
+        <rdfs:label>thuộc chuyên ngành</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#tienQuyet -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#tienQuyet">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:range rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>tiên quyết</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#hocKy -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#hocKy">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>học kỳ</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#laMonTuChon -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#laMonTuChon">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>là môn tự chọn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#maMonHoc -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#maMonHoc">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>mã môn học</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#soTinChi -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontologies/2024/10/11/edu_program#soTinChi">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>số tín chỉ</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#attt -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#attt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coNoiDung"/>
+                        <owl:someValuesFrom rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#thuocChuyenNganh"/>
+                        <owl:hasValue rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#AnToanThongTin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+        <rdfs:label>Môn CN An Toàn Thông Tin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#chuyenNganh -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#chuyenNganh">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost/ontologies/2024/10/11/edu_program#chuyenNganh"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#baoGomMonHoc"/>
+                        <owl:someValuesFrom rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label>Chuyên ngành</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#cnpm -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#cnpm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coNoiDung"/>
+                        <owl:someValuesFrom rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#thuocChuyenNganh"/>
+                        <owl:hasValue rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#CongNghePhanMem"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label>Môn CN Công Nghệ Phần Mềm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#daiCuong -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#daiCuong">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>Đại cương</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>Đại cương ngành</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#doAn -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#doAn">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>Đồ án</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#giaoDucQuocPhong -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#giaoDucQuocPhong">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>Giáo dục quốc phòng</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#httt -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#httt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coNoiDung"/>
+                        <owl:someValuesFrom rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#thuocChuyenNganh"/>
+                        <owl:hasValue rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#HeThongThongTin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+        <rdfs:label>Môn CN Hệ Thông Thông Tin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monHoc"/>
+        <rdfs:label>Môn chuyên ngành</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#monHoc -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#monHoc">
+        <rdfs:label>Môn học</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCua"/>
+                        <owl:someValuesFrom rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#thuocChuyenNganh"/>
+                        <owl:hasValue rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#AnToanThongTin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"/>
+        <rdfs:label>Nội dung An toàn thông tin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung chuyên ngành</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCua"/>
+                        <owl:someValuesFrom rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#thuocChuyenNganh"/>
+                        <owl:hasValue rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#CongNghePhanMem"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"/>
+        <rdfs:label>Nội dung Công nghệ phần mềm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCua"/>
+                        <owl:someValuesFrom rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#thuocChuyenNganh"/>
+                        <owl:hasValue rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#HeThongThongTin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"/>
+        <rdfs:label>Nội dung Hệ thống thông tin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc -->
+
+    <owl:Class rdf:about="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc">
+        <rdfs:label>Nội dung môn học</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#AnToanThongTin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#AnToanThongTin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#chuyenNganh"/>
+        <rdfs:label>An Toàn Thông Tin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#CongNghePhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#CongNghePhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#chuyenNganh"/>
+        <rdfs:label>Công Nghệ Phần Mềm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#HeThongThongTin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#HeThongThongTin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#chuyenNganh"/>
+        <rdfs:label>Hệ Thống Thông Tin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#PBL1DoAnLapTrinhTinhToan -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#PBL1DoAnLapTrinhTinhToan">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#doAn"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPbl1DoAnLapTrinhTinhToan"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm13</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>PBL1: Đồ án Lập trình Tính toán</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#PBL2DoAnCoSoLapTrinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#PBL2DoAnCoSoLapTrinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#doAn"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPbl2DoAnCoSoLapTrinh"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHuongDoiTuong"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm21</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>PBL2: Đồ án cơ sở lập trình</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#PBL3DoAnCongNghePhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#PBL3DoAnCongNghePhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#doAn"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPbl3DoAnCongNghePhanMem"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#congNghePhanMem"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhJava"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhNET"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm28</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>PBL3: Đồ án Công nghệ Phần mềm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#PBL4DoAnHeDieuHanhVaMangMayTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#PBL4DoAnHeDieuHanhVaMangMayTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#doAn"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPbl4DoAnHeDieuHanhVaMangMayTinh"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhMang"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <maMonHoc>mm38</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>PBL4: Đồ án hệ điều hành và Mạng máy tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#PBL5DoAnKyThuatMayTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#PBL5DoAnKyThuatMayTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#doAn"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPbl5DoAnKyThuatMayTinh"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#triTueNhanTao"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#viDieuKhien"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm47</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>PBL5: Đồ án Kỹ thuật Máy tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#PBL6DoAnChuyenNganh1ATTT -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#PBL6DoAnChuyenNganh1ATTT">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#attt"/>
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#doAn"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPbl6DoAnChuyenNganh1ATTT"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#anToanThongTinMang"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#maHoaVaMatMa"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm74</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</soTinChi>
+        <rdfs:label>PBL6: Đồ án chuyên ngành 1 (ATTT)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#PBL6DoAnChuyenNganh1CNPM -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#PBL6DoAnChuyenNganh1CNPM">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cnpm"/>
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#doAn"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPbl6DoAnChuyenNganh1CongNghePhanMem"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kiemThuPhanMem"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kienTrucHuongDichVu"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm59</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</soTinChi>
+        <rdfs:label>PBL6: Đồ án chuyên ngành 1 (CNPM)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#PBL6DoAnChuyenNganh1HTTT -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#PBL6DoAnChuyenNganh1HTTT">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#doAn"/>
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#httt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPbl6DoAnChuyenNganh1HTTT"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coSoHeThongThongTin"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kienTrucDoanhNghiep"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm65</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</soTinChi>
+        <rdfs:label>PBL6: Đồ án chuyên ngành 1 (HTTT)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#anToanThongTinMang -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#anToanThongTinMang">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#attt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndAnToanThongTinMang"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm66</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>An toàn thông tin mạng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#anhVanA2_1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#anhVanA2_1">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndAnhVanA2_1"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm04</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Anh văn A2.1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#anhVanA2_2 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#anhVanA2_2">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndAnhVanA2_2"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#anhVanA2_1"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm08</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</soTinChi>
+        <rdfs:label>Anh văn A2.2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#cauTrucDuLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#cauTrucDuLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndCauTrucDuLieu"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm10</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Cấu trúc dữ liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#cauTrucMayTinhVaViXuLy -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#cauTrucMayTinhVaViXuLy">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndCauTrucMayTinhVaViXuLy"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm07</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Cấu trúc máy tính và vi xử lý</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#chuNghiaXaHoiKhoaHoc -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#chuNghiaXaHoiKhoaHoc">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndChuNghiaXaHoiKhoaHoc"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kinhTeChinhTriMacLenin"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm32</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Chủ nghĩa xã hội khoa học</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#chuongTrinhDich -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#chuongTrinhDich">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndChuongTrinhDich"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm33</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Chương trình dịch</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#chuyenDeChuyenNganhAnToanThongTin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#chuyenDeChuyenNganhAnToanThongTin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#attt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#chuyenDeChuyenNganhAnToanThongTin"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm68</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Chuyên đề chuyên ngành An toàn thông tin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#chuyenDeChuyenNganhCongNghePhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#chuyenDeChuyenNganhCongNghePhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cnpm"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndChuyenDeChuyenNganhCongNghePhanMem"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#congNghePhanMem"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm56</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Chuyên đề chuyên ngành Công nghệ phần mềm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#chuyenDeCongNghe -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#chuyenDeCongNghe">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cnpm"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndChuyenDeCongNghe"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhJava"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhNET"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm58</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Chuyên đề công nghệ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#coSoDuLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#coSoDuLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndCoSoDuLieu"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cauTrucDuLieu"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm18</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Cơ sở dữ liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#coSoHeThongThongTin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#coSoHeThongThongTin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#httt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndCoSoHeThongThongTin"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coSoDuLieu"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#congNghePhanMem"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm61</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Cơ sở hệ thống thông tin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#congNgheBlockchain -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#congNgheBlockchain">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#attt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndCongNgheBlockchain"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#anToanThongTinMang"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm71</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Công nghệ Blockchain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#congNghePhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#congNghePhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndCongNghePhanMem"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#phanTichVaThietKeHuongDoiTuong"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm25</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Công nghệ phần mềm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#congNgheWeb -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#congNgheWeb">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndCongNgheWeb"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHuongDoiTuong"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm36</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Công nghệ Web</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#daiSoTuyenTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#daiSoTuyenTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndDaiSoTuyenTinh"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#giaiTich1"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm02</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Đại số tuyến tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#dienToanDamMay -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#dienToanDamMay">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndDienToanDamMay"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm41</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Điện toán đám mây</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#dieuTraSo -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#dieuTraSo">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#attt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndDieuTraSo"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#anToanThongTinMang"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm70</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Điều tra số</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#doAnTotNghiepCuNhan -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#doAnTotNghiepCuNhan">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#doAn"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndDoAnTotNghiepCuNhan"/>
+        <tienQuyet rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#thucTapTotNghiep"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.0</soTinChi>
+        <soTinChi>mm76</soTinChi>
+        <rdfs:label>Đồ án tốt nghiệp (cử nhân)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#doHoaMayTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#doHoaMayTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndDoHoaMayTinh"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm29</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Đồ họa máy tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#giaiTich1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#giaiTich1">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndGiaiTich1"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm01</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Giải tích 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#giaiTich2 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#giaiTich2">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndGiaiTich2"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#giaiTich1"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm15</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</soTinChi>
+        <rdfs:label>Giải tích 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#giaoTiepNguoiMay -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#giaoTiepNguoiMay">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndGiaoTiepNguoiMay"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#phanTichVaThietKeHuongDoiTuong"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm31</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Giao tiếp người máy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#khaiPhaDuLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#khaiPhaDuLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#httt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKhaiPhaDuLieu"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coSoDuLieu"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm62</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Khai phá dữ liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#khoaHocDuLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#khoaHocDuLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKhoaHocDuLieu"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#giaiTich2"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#xacSuatThongKe"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#triTueNhanTao"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm44</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Khoa học dữ liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#kiemThuPhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#kiemThuPhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cnpm"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKiemThuPhanMem"/>
+        <thuocChuyenNganh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#congNghePhanMem"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm55</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Kiểm thử phần mềm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#kiemThuXamNhap -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#kiemThuXamNhap">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#attt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKiemThuXamNhap"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#anToanThongTinMang"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm69</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Kiểm thử xâm nhập</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#kienTrucDoanhNghiep -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#kienTrucDoanhNghiep">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#httt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKienTrucDoanhNghiep"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coSoDuLieu"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm60</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Kiến trúc doanh nghiệp</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#kienTrucHuongDichVu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#kienTrucHuongDichVu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cnpm"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKienTrucHuongDichVu"/>
+        <thuocChuyenNganh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#congNghePhanMem"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm54</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Kiến trúc hướng dịch vụ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#kienTrucHuongDichVuHTTT -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#kienTrucHuongDichVuHTTT">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#httt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKienTrucHuongDichVuHTTT"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhMang"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm64</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Kiến trúc hướng dịch vụ (HTTT)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#kinhTeChinhTriMacLenin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#kinhTeChinhTriMacLenin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKinhTeChinhTriMacLenin"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#trietHocMacLenin"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm14</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Kinh tế chính trị Mác - Lênin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKyThuatLapTrinh"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiSoTuyenTinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm03</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Kỹ thuật lập trình</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#kyThuatSoUngDung -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#kyThuatSoUngDung">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKyThuatSoUngDung"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm50</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Kỹ thuật số ứng dụng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#kyThuatTruyenSoLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#kyThuatTruyenSoLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndKyThuatTruyenSoLieu"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm39</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Kỹ thuật truyền số liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#lapTrinhDiDong -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhDiDong">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhDiDong"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhJava"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm49</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Lập trình di động</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHeThongNhung -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHeThongNhung">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhHeThongNhung"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#viDieuKhien"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm48</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Lập trình hệ thống nhúng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHuongDoiTuong -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHuongDoiTuong">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhHuongDoiTuong"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cauTrucDuLieu"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm17</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.5</soTinChi>
+        <rdfs:label>Lập trình hướng đối tượng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#lapTrinhJava -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhJava">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhJava"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coSoDuLieu"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHuongDoiTuong"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm27</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.5</soTinChi>
+        <rdfs:label>Lập trình Java</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#lapTrinhMang -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhMang">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhMang"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhJava"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhNET"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm37</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Lập trình mạng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#lapTrinhNET -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhNET">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhNET"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coSoDuLieu"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHuongDoiTuong"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm26</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.5</soTinChi>
+        <rdfs:label>Lập trình .NET</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#lapTrinhPython -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhPython">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhPython"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHuongDoiTuong"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm51</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Lập trình Python</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#lapTrinhTrenLinux -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhTrenLinux">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhTrenLinux"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#nguyenLyHeDieuHanh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm40</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Lập trình trên Linux</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#lichSuDangCongSanVietNam -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#lichSuDangCongSanVietNam">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndLichSuDangCongSanVietNam"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kinhTeChinhTriMacLenin"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm42</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Lịch sử Đảng Cộng sản Việt Nam</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#maHoaVaMatMa -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#maHoaVaMatMa">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#attt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndMaHoaVaMatMa"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm67</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Mã hóa và mật mã</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#maNguonMo -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#maNguonMo">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cnpm"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndMaNguonMo"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kienTrucHuongDichVu"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm57</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Mã nguồn mở</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndMangMayTinh"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#nguyenLyHeDieuHanh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm23</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Mạng máy tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndAnToanThongTinMang -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndAnToanThongTinMang">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+        <rdfs:label>Nội dung An toàn thông tin mạng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndAnhVanA2_1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndAnhVanA2_1">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Anh văn A2.1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndAnhVanA2_2 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndAnhVanA2_2">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Anh văn A2.2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndCauTrucDuLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndCauTrucDuLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Cấu trúc dữ liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndCauTrucMayTinhVaViXuLy -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndCauTrucMayTinhVaViXuLy">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Cấu trúc máy tính và vi xử lý</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndChuNghiaXaHoiKhoaHoc -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndChuNghiaXaHoiKhoaHoc">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Chủ nghĩa xã hội khoa học</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndChuongTrinhDich -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndChuongTrinhDich">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Chương trình dịch</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndChuyenDeChuyenNganhCongNghePhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndChuyenDeChuyenNganhCongNghePhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm"/>
+        <rdfs:label>Nội dung Chuyên đề chuyên ngành Công nghệ phần mềm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndChuyenDeCongNghe -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndChuyenDeCongNghe">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm"/>
+        <rdfs:label>Nội dung Chuyên đề công nghệ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndCoSoDuLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndCoSoDuLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Cơ sở dữ liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndCoSoHeThongThongTin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndCoSoHeThongThongTin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt"/>
+        <rdfs:label>Nội dung Cơ sở hệ thống thông tin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndCongNgheBlockchain -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndCongNgheBlockchain">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+        <rdfs:label>Nội dung Công nghệ Blockchain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndCongNghePhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndCongNghePhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Công nghệ phần mềm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndCongNgheWeb -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndCongNgheWeb">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Công nghệ Web</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndDaiSoTuyenTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndDaiSoTuyenTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Đại số tuyến tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndDienToanDamMay -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndDienToanDamMay">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Điện toán đám mây</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndDieuTraSo -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndDieuTraSo">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+        <rdfs:label>Nội dung Điều tra số</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndDoAnTotNghiepCuNhan -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndDoAnTotNghiepCuNhan">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Đồ án tốt nghiệp (cử nhân)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndDoHoaMayTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndDoHoaMayTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Đồ họa máy tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndGiaiTich1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndGiaiTich1">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Giải tích 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndGiaiTich2 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndGiaiTich2">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Giải tích 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndGiaoTiepNguoiMay -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndGiaoTiepNguoiMay">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Giao tiếp người máy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKhaiPhaDuLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKhaiPhaDuLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt"/>
+        <rdfs:label>Nội dung Khai phá dữ liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKhoaHocDuLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKhoaHocDuLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Khoa học dữ liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKiemThuPhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKiemThuPhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm"/>
+        <noiDungCua rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kiemThuPhanMem"/>
+        <rdfs:label>Nội dung Kiểm thử phần mềm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKiemThuXamNhap -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKiemThuXamNhap">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+        <rdfs:label>Nội dung Kiểm thử xâm nhập</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKienTrucDoanhNghiep -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKienTrucDoanhNghiep">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt"/>
+        <rdfs:label>Nội dung Kiến trúc doanh nghiệp</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKienTrucHuongDichVu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKienTrucHuongDichVu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm"/>
+        <noiDungCua rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kienTrucHuongDichVu"/>
+        <rdfs:label>Nội dung Kiến trúc hướng dịch vụ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKienTrucHuongDichVuHTTT -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKienTrucHuongDichVuHTTT">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt"/>
+        <rdfs:label>Nội dung Kiến trúc hướng dịch vụ (HTTT)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKinhTeChinhTriMacLenin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKinhTeChinhTriMacLenin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Kinh tế chính trị Mác - Lênin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKyThuatLapTrinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKyThuatLapTrinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Kỹ thuật lập trình</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKyThuatSoUngDung -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKyThuatSoUngDung">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Kỹ thuật số ứng dụng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndKyThuatTruyenSoLieu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndKyThuatTruyenSoLieu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Kỹ thuật truyền số liệu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhDiDong -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhDiDong">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Lập trình di động</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhHeThongNhung -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhHeThongNhung">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Lập trình hệ thống nhúng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhHuongDoiTuong -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhHuongDoiTuong">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Lập trình hướng đối tượng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhJava -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhJava">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Lập trình Java</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhMang -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhMang">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Lập trình mạng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhNET -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhNET">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Lập trình .NET</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhPython -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhPython">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Lập trình Python</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhTrenLinux -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndLapTrinhTrenLinux">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Lập trình trên Linux</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndLichSuDangCongSanVietNam -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndLichSuDangCongSanVietNam">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Lịch sử Đảng Cộng sản Việt Nam</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndMaHoaVaMatMa -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndMaHoaVaMatMa">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+        <rdfs:label>Nội dung Mã hóa và mật mã</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndMaNguonMo -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndMaNguonMo">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm"/>
+        <rdfs:label>Nội dung Mã nguồn mở</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndMangMayTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndMangMayTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Mạng máy tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndNgonNguHinhThuc -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndNgonNguHinhThuc">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Ngôn ngữ hình thức</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndNguyenLyHeDieuHanh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndNguyenLyHeDieuHanh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Nguyên lý hệ điều hành</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndNhapMonNganh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndNhapMonNganh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Nhập môn ngành</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPbl1DoAnLapTrinhTinhToan -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPbl1DoAnLapTrinhTinhToan">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung PBL1: Đồ án lập trình tính toán</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPbl2DoAnCoSoLapTrinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPbl2DoAnCoSoLapTrinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung PBL2: Đồ án cơ sở lập trình</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPbl3DoAnCongNghePhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPbl3DoAnCongNghePhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung PBL3: Đồ án Công nghệ phần mềm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPbl4DoAnHeDieuHanhVaMangMayTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPbl4DoAnHeDieuHanhVaMangMayTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung PBL4: Đồ án hệ điều hành và mạng máy tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPbl5DoAnKyThuatMayTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPbl5DoAnKyThuatMayTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung PBL5: Đồ án kỹ thuật máy tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPbl6DoAnChuyenNganh1ATTT -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPbl6DoAnChuyenNganh1ATTT">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+        <rdfs:label>Nội dung PBL6: Đồ án chuyên ngành 1 (ATTT)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPbl6DoAnChuyenNganh1CongNghePhanMem -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPbl6DoAnChuyenNganh1CongNghePhanMem">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm"/>
+        <rdfs:label>Nội dung PBL6: Đồ án chuyên ngành 1 (CNPM)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPbl6DoAnChuyenNganh1HTTT -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPbl6DoAnChuyenNganh1HTTT">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt"/>
+        <rdfs:label>Nội dung PBL6: Đồ án chuyên ngành 1 (HTTT)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPhanTichMaDoc -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPhanTichMaDoc">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+        <rdfs:label>Nội dung Phân tích mã độc</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPhanTichVaThietKeGiaiThuat -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPhanTichVaThietKeGiaiThuat">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Phân tích và thiết kế giải thuật</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPhanTichVaThietKeHuongDoiTuong -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPhanTichVaThietKeHuongDoiTuong">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Phân tích và thiết kế hướng đối tượng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPhapLuatDaiCuong -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPhapLuatDaiCuong">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Pháp luật đại cương</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndPhuongPhapTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndPhuongPhapTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Phương pháp tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndQuanLyDuAnCongNgheThongTin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndQuanLyDuAnCongNgheThongTin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Quản lý dự án Công nghệ thông tin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndQuanTriMang -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndQuanTriMang">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"/>
+        <rdfs:label>Nội dung Quản trị mạng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndTNVatLy1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndTNVatLy1">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Thí nghiệm Vật lý 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndThucTapTotNghiep -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndThucTapTotNghiep">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"/>
+        <rdfs:label>Nội dung Thực tập tốt nghiệp</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndThuongMaiDienTu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndThuongMaiDienTu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt"/>
+        <rdfs:label>Nội dung Thương mại điện tử</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndToanRoiRac -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndToanRoiRac">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Toán rời rạc</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndToanUngDungCongNgheThongTin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndToanUngDungCongNgheThongTin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Toán ứng dụng Công nghệ thông tin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndTriTueNhanTao -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndTriTueNhanTao">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Trí tuệ nhân tạo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndTrietHocMacLenin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndTrietHocMacLenin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Triết học Mác - Lênin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndTuTuongHoChiMinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndTuTuongHoChiMinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Tư tưởng Hồ Chí Minh</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndVatLy1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndVatLy1">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Vật lý 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndViDieuKhien -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndViDieuKhien">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Vi điều khiển</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndXacSuatThongKe -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndXacSuatThongKe">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Xác suất thống kê</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ndXuLyTinHieuSo -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ndXuLyTinHieuSo">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"/>
+        <rdfs:label>Nội dung Xử lý tín hiệu số</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#ngonNguHinhThuc -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#ngonNguHinhThuc">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndNgonNguHinhThuc"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cauTrucDuLieu"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm30</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Ngôn ngữ hình thức</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#nguyenLyHeDieuHanh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#nguyenLyHeDieuHanh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndNguyenLyHeDieuHanh"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cauTrucDuLieu"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cauTrucMayTinhVaViXuLy"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm20</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.5</soTinChi>
+        <rdfs:label>Nguyên lý hệ điều hành</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#nhapMonNganh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#nhapMonNganh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndNhapMonNganh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm05</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Nhập môn ngành</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#phanTichMaDoc -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#phanTichMaDoc">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#attt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPhanTichMaDoc"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm73</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Phân tích mã độc</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#phanTichVaThietKeGiaiThuat -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#phanTichVaThietKeGiaiThuat">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPhanTichVaThietKeGiaiThuat"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cauTrucDuLieu"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm19</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Phân tích và thiết kế giải thuật</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#phanTichVaThietKeHuongDoiTuong -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#phanTichVaThietKeHuongDoiTuong">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPhanTichVaThietKeHuongDoiTuong"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lapTrinhHuongDoiTuong"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm24</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Phân tích và thiết kế hướng đối tượng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#phapLuatDaiCuong -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#phapLuatDaiCuong">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPhapLuatDaiCuong"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm53</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Pháp luật đại cương</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#phuongPhapTinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#phuongPhapTinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndPhuongPhapTinh"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm12</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Phương pháp tính</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#quanLyDuAnCongNgheThongTin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#quanLyDuAnCongNgheThongTin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndQuanLyDuAnCongNgheThongTin"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#congNghePhanMem"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm45</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Quản lý dự án Công nghệ thông tin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#quanTriMang -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#quanTriMang">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#attt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndQuanTriMang"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#mangMayTinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm72</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Quản trị mạng</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#thucTapTotNghiep -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#thucTapTotNghiep">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndThucTapTotNghiep"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#PBL1DoAnLapTrinhTinhToan"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#PBL2DoAnCoSoLapTrinh"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#PBL3DoAnCongNghePhanMem"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#PBL4DoAnHeDieuHanhVaMangMayTinh"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#PBL5DoAnKyThuatMayTinh"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#PBL6DoAnChuyenNganh1ATTT"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#PBL6DoAnChuyenNganh1CNPM"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm75</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Thực tập tốt nghiệp</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#thuongMaiDienTu -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#thuongMaiDienTu">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#httt"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndThuongMaiDienTu"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#coSoHeThongThongTin"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</laMonTuChon>
+        <maMonHoc>mm63</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Thương mại điện tử</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#tnVatLy1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#tnVatLy1">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndTNVatLy1"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#vatLy1"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm16</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</soTinChi>
+        <rdfs:label>Thí nghiệm Vật lý 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#toanRoiRac -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#toanRoiRac">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndToanRoiRac"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm11</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Toán rời rạc</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#toanUngDungCongNgheThongTin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#toanUngDungCongNgheThongTin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndToanUngDungCongNgheThongTin"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm35</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Toán ứng dụng Công nghệ thông tin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#triTueNhanTao -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#triTueNhanTao">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndTriTueNhanTao"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#phanTichVaThietKeGiaiThuat"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm43</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Trí tuệ nhân tạo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#trietHocMacLenin -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#trietHocMacLenin">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndTrietHocMacLenin"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm06</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Triết học Mác - Lênin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#tuTuongHoChiMinh -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#tuTuongHoChiMinh">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndTuTuongHoChiMinh"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#chuNghiaXaHoiKhoaHoc"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#lichSuDangCongSanVietNam"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm52</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Tư tưởng Hồ Chí Minh</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#vatLy1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#vatLy1">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndVatLy1"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#giaiTich1"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm09</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Vật lý 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#viDieuKhien -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#viDieuKhien">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndViDieuKhien"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#cauTrucMayTinhVaViXuLy"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#kyThuatLapTrinh"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm46</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Vi điều khiển</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#xacSuatThongKe -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#xacSuatThongKe">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuong"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndXacSuatThongKe"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#giaiTich1"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm22</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</soTinChi>
+        <rdfs:label>Xác suất thống kê</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/ontologies/2024/10/11/edu_program#xuLyTinHieuSo -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontologies/2024/10/11/edu_program#xuLyTinHieuSo">
+        <rdf:type rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"/>
+        <coNoiDung rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#ndXuLyTinHieuSo"/>
+        <hocTruoc rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#daiSoTuyenTinh"/>
+        <songHanh rdf:resource="http://localhost/ontologies/2024/10/11/edu_program#xacSuatThongKe"/>
+        <hocKy rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hocKy>
+        <laMonTuChon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</laMonTuChon>
+        <maMonHoc>mm34</maMonHoc>
+        <soTinChi rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</soTinChi>
+        <rdfs:label>Xử lý tín hiệu số</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

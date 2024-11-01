@@ -1,0 +1,92 @@
+Triển khai hệ thống tìm kiếm ngữ nghĩa của môn học dựa trên ontology và mô hình học sâu trong Python.
+sử dụng:
+cấu trúc và data từ file ontology import vào neu4j với database tên edu-db
+PhoBERT: Mã hóa câu và từ khóa thành vector ngữ nghĩa cho tiếng Việt.
+FAISS: Lập chỉ mục và tìm kiếm ngữ nghĩa dựa trên vector.
+
+CREATE CONSTRAINT n10s_unique_uri IF NOT EXISTS 
+FOR (r:Resource) 
+REQUIRE r.uri IS UNIQUE;
+
+CALL n10s.graphconfig.init({
+  handleRDFTypes: "LABELS_AND_NODES"
+});
+
+CALL n10s.rdf.import.fetch("file:///C:\Users\Admin\Desktop\ontology\ontology.rdf", "RDF/XML");
+
+MATCH (n)
+RETURN DISTINCT labels(n);
+
+MATCH ()-[r]->()
+RETURN DISTINCT type(r);
+
+MATCH (child:Resource)-[:rdfs__subClassOf*]->(ancestor:Resource)
+RETURN child.uri AS ChildClass, ancestor.uri AS AncestorClass
+
+labels(n)
+["_GraphConfig"]
+["_NsPrefDef"]
+["Resource", "owl__NamedIndividual", "ns0__noiDungMonHoc"]
+["Resource", "owl__NamedIndividual", "ns0__daiCuongNganh"]
+["Resource"]
+["Resource", "owl__ObjectProperty"]
+["Resource", "owl__NamedIndividual", "ns0__noiDungHttt"]
+["Resource", "owl__NamedIndividual", "ns0__noiDungCnpm"]
+["Resource", "owl__NamedIndividual", "ns0__attt"]
+["Resource", "owl__NamedIndividual", "ns0__httt"]
+["Resource", "owl__NamedIndividual", "ns0__daiCuong"]
+["Resource", "owl__DatatypeProperty"]
+["Resource", "owl__Restriction"]
+["Resource", "owl__Class"]
+["Resource", "owl__NamedIndividual", "ns0__noiDungChuyenNganh"]
+["Resource", "owl__NamedIndividual", "ns0__doAn"]
+["Resource", "owl__NamedIndividual", "ns0__cnpm"]
+["Resource", "owl__NamedIndividual", "ns0__noiDungAttt"]
+["Resource", "owl__NamedIndividual", "ns0__chuyenNganh"]
+["Resource", "owl__NamedIndividual", "ns0__doAn", "ns0__cnpm"]
+["Resource", "owl__NamedIndividual", "ns0__attt", "ns0__doAn"]
+["Resource", "owl__NamedIndividual", "ns0__monChuyenNganh"]
+["Resource", "owl__Ontology"]
+["Resource", "owl__NamedIndividual", "ns0__httt", "ns0__doAn"]
+
+type(r)
+"rdf__type"
+"ns0__coNoiDung"
+"ns0__songHanh"
+"rdfs__range"
+"rdfs__domain"
+"ns0__noiDungCua"
+"ns0__hocTruoc"
+"owl__someValuesFrom"
+"owl__onProperty"
+"rdf__first"
+"rdf__rest"
+"owl__intersectionOf"
+"owl__hasValue"
+"rdfs__subClassOf"
+"owl__equivalentClass"
+"ns0__thuocChuyenNganh"
+"rdfs__subPropertyOf"
+"ns0__tienQuyet"
+
+ChildClass	AncestorClass
+"http://localhost/ontologies/2024/10/11/edu_program#httt"	"http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"
+"http://localhost/ontologies/2024/10/11/edu_program#httt"	"http://localhost/ontologies/2024/10/11/edu_program#monHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm"	"http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"
+"http://localhost/ontologies/2024/10/11/edu_program#noiDungCnpm"	"http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#daiCuongNganh"	"http://localhost/ontologies/2024/10/11/edu_program#monHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"	"http://localhost/ontologies/2024/10/11/edu_program#monHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"	"http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"
+"http://localhost/ontologies/2024/10/11/edu_program#noiDungAttt"	"http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#attt"	"http://localhost/ontologies/2024/10/11/edu_program#monChuyenNganh"
+"http://localhost/ontologies/2024/10/11/edu_program#attt"	"http://localhost/ontologies/2024/10/11/edu_program#monHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#daiCuong"	"http://localhost/ontologies/2024/10/11/edu_program#monHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"	"http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#giaoDucQuocPhong"	"http://localhost/ontologies/2024/10/11/edu_program#monHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#doAn"	"http://localhost/ontologies/2024/10/11/edu_program#monHoc"
+"http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt"	"http://localhost/ontologies/2024/10/11/edu_program#noiDungChuyenNganh"
+"http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt"	"http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"
+
+
+
+
