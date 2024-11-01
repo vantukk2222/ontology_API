@@ -1,3 +1,3 @@
-Flask
-neo4j
-dotenv
+Flask==3.0.3
+neo4j==5.25.0
+python-dotenv==1.0.1
