@@ -90,3 +90,5 @@ ChildClass	AncestorClass
 
 
 
+cd C:\Users\Admin\.Neo4jDesktop\relate-data\dbmss\dbms-9d993653-28c5-430f-afd1-dcbcc0a517fe\bin
+neo4j-admin database dump edu-db --to-path=C:\Users\Admin\neo4j-dumps

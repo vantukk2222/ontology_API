@@ -147,7 +147,7 @@ def get_courses():
     filter_relation = request.args.get('relation', None)
     
     query = """
-    MATCH (ancestor:Resource {uri: 'http://localhost/ontologies/2024/10/11/edu_program#monHoc'})
+    MATCH (ancestor:Resource {rdfs__label: 'Môn học'})
     MATCH (n:Resource)-[:rdfs__subClassOf*]->(ancestor)
     MATCH (instance:Resource)-[:rdf__type]->(n)
     OPTIONAL MATCH (instance)-[rel]->(related)
