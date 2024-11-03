@@ -173,7 +173,18 @@ def get_courses():
     page = int(request.args.get('page', 1))
     limit = int(request.args.get('limit', 10))
     filter_relation = request.args.get('relation', None)
-    
+
+    count_query = """
+    MATCH (ancestor:Resource {rdfs__label: 'Môn học'})
+    MATCH (n:Resource)-[:rdfs__subClassOf*]->(ancestor)
+    MATCH (instance:Resource)-[:rdf__type]->(n)
+    RETURN count(instance) AS total_courses
+    """
+    total_courses_result = execute_query(count_query, {})
+    total_courses = total_courses_result[0]['total_courses'] if total_courses_result else 0
+
+    total_pages = (total_courses + limit - 1) // limit
+
     query = """
     MATCH (ancestor:Resource {rdfs__label: 'Môn học'})
     MATCH (n:Resource)-[:rdfs__subClassOf*]->(ancestor)
@@ -182,6 +193,7 @@ def get_courses():
     WITH instance, collect({relation_id: elementId(rel), relation_type: type(rel), target_id: elementId(related), rdfs__label: related.rdfs__label}) AS all_relations
     WHERE ($filter_relation IS NULL OR all(r IN $filter_relation WHERE any(rel IN all_relations WHERE rel.relation_type = r)))
     RETURN DISTINCT elementId(instance) AS course_id, instance.ns0__hocKy AS ns0__hocKy, instance.ns0__laMonTuChon AS ns0__laMonTuChon, instance.ns0__maMonHoc AS ns0__maMonHoc, instance.ns0__soTinChi AS ns0__soTinChi, instance.rdfs__label AS rdfs__label, [rel IN all_relations WHERE rel.rdfs__label IS NOT NULL] AS relations
+    ORDER BY instance.ns0__hocKy
     SKIP $skip
     LIMIT $limit
     """
@@ -191,8 +203,13 @@ def get_courses():
         'limit': limit
     }
     courses = execute_query(query, params)
-    return jsonify(courses)
 
+    return jsonify({
+        'total_courses': total_courses,
+        'total_pages': total_pages,
+        'courses': courses
+    }), 200
+    
 @courses_bp.route('/courses/<course_id>', methods=['GET'])
 def get_course_by_code(course_id):
     query = """
@@ -232,3 +249,18 @@ def update_course_by_code(course_id):
     }
 
     return jsonify({'message': 'Course updated successfully!', 'course': updated_course_data}), 200
+
+@courses_bp.route('/courses/<course_id>', methods=['DELETE'])
+def delete_course(course_id):
+    existing_course = check_existing_course(course_id)
+    if not existing_course:
+        return jsonify({'error': f'Course with id {course_id} does not exist.'}), 404
+
+    query = """
+    MATCH (course) WHERE elementId(course) = $course_id
+    DETACH DELETE course
+    """
+    params = {'course_id': course_id}
+    execute_query(query, params)
+
+    return jsonify({'message': f'Course with id {course_id} deleted successfully!'}), 200

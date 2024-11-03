@@ -1,6 +1,6 @@
 Triển khai hệ thống tìm kiếm ngữ nghĩa của môn học dựa trên ontology và mô hình học sâu trong Python.
 sử dụng:
-cấu trúc và data từ file ontology import vào neu4j với database tên edu-db
+cấu trúc và data từ file ontology import vào neu4j với database tên neu4j
 PhoBERT: Mã hóa câu và từ khóa thành vector ngữ nghĩa cho tiếng Việt.
 FAISS: Lập chỉ mục và tìm kiếm ngữ nghĩa dựa trên vector.
 
