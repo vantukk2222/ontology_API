@@ -18,17 +18,12 @@ def check_existing_target(target_id):
     params = {'target_id': target_id}
     return execute_query(query, params)
 
-def check_existing_relation(course_id, target_id, relation_type):
+def check_existing_relation(relation_id):
     query = """
-    MATCH (course) WHERE elementId(course) = $course_id
-    MATCH (target) WHERE elementId(target) = $target_id
-    OPTIONAL MATCH (course)-[rel:`""" + relation_type + """`]->(target)
+    MATCH ()-[rel]->() WHERE elementId(rel) = $relation_id
     RETURN rel
     """
-    params = {
-        'course_id': course_id,
-        'target_id': target_id
-    }
+    params = {'relation_id': relation_id}
     return execute_query(query, params)
 
 def create_course(data):
@@ -83,9 +78,11 @@ def update_course(course_id, data):
 
 def update_relation(relation_id, relation_type, target_id):
     query = """
-    MATCH ()-[rel]->(target) WHERE elementId(rel) = $relation_id AND elementId(target) = $target_id
-    SET rel.relation_type = $relation_type
-    RETURN elementId(rel) AS relation_id, type(rel) AS relation_type, elementId(target) AS target_id
+    MATCH ()-[rel]->(target) WHERE elementId(rel) = $relation_id
+    WITH rel, startNode(rel) AS start, target
+    DELETE rel
+    CREATE (start)-[newRel:`""" + relation_type + """`]->(target)
+    RETURN elementId(newRel) AS relation_id, type(newRel) AS relation_type, elementId(target) AS target_id
     """
     params = {
         'relation_id': relation_id,
@@ -139,6 +136,37 @@ def add_course_relations(course_id):
 
             create_relation(course_id, relation)
     return jsonify({'message': 'Relations added successfully!'}), 201
+
+@courses_bp.route('/courses/relations/<relation_id>', methods=['PUT'])
+def update_relation_by_id(relation_id):
+    data = request.get_json()
+    relation_type = data.get('relation_type')
+    target_id = data.get('target_id')
+    
+    if not relation_type or not target_id:
+        return jsonify({'error': 'Missing relation_type or target_id.'}), 400
+
+    # Check if the same relation already exists
+    query_check = """
+    MATCH (course)-[rel:`""" + relation_type + """`]->(target)
+    WHERE elementId(rel) <> $relation_id AND elementId(target) = $target_id
+    RETURN rel
+    """
+    params_check = {
+        'relation_id': relation_id,
+        'target_id': target_id
+    }
+    existing_relation = execute_query(query_check, params_check)
+
+    if existing_relation:
+        return jsonify({'error': 'Relation with the same type and target already exists, update not allowed.'}), 400
+    
+    updated_relation = update_relation(relation_id, relation_type, target_id)
+    
+    if not updated_relation:
+        return jsonify({'error': 'Failed to update relation.'}), 500
+
+    return jsonify({'message': 'Relation updated successfully!', 'relation': updated_relation}), 200
 
 @courses_bp.route('/courses', methods=['GET'])
 def get_courses():
