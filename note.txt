@@ -92,3 +92,18 @@ ChildClass	AncestorClass
 
 cd C:\Users\Admin\.Neo4jDesktop\relate-data\dbmss\dbms-9d993653-28c5-430f-afd1-dcbcc0a517fe\bin
 neo4j-admin database dump edu-db --to-path=C:\Users\Admin\neo4j-dumps
+
+
+CREATE CONSTRAINT ON (u:User) ASSERT u.username IS UNIQUE;
+
+CREATE (u:User {
+    username: 'user1',
+    password: '$2a$10$c.cjgghusl29HgSYtio7JOrN70skseEOoTH5cPeTvbs80z4kINLEC',
+    role: 'customer'
+});
+
+CREATE (uc:UserCourse {
+    user_id: 'user1_id_here',
+    course_id: 'course1_id_here',
+    status: 'completed'
+});
