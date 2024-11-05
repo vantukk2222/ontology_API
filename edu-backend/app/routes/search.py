@@ -1,102 +1,108 @@
-# app/routes/search.py
+# Sử dụng API để thực thi truy vấn thay vì kết nối trực tiếp với cơ sở dữ liệu Neo4j
 from flask import Blueprint, jsonify, request
+from app.utils import execute_query
+import re
 from transformers import AutoTokenizer, AutoModel
 import torch
-import faiss
-import numpy as np
-import os
-import unidecode
-
-from app.utils import execute_query
+import torch.nn.functional as F
 
 # Create a blueprint for search routes
 search_bp = Blueprint('search', __name__)
 
-# Từ điển từ viết tắt và từ đồng nghĩa
+# Bảng từ điển để chuyển đổi viết tắt thành dạng đầy đủ
 abbreviation_dict = {
-    "HTTT": "hệ thống thông tin",
-    "CNPM": "công nghệ phần mềm",
-    "ATTT": "an toàn thông tin",
-    "CNTT": "công nghệ thông tin",
-    "AI": "trí tuệ nhân tạo",
-    "CSDL": "cơ sở dữ liệu",
-    "PPT": "phương pháp tính"
+    "PBL": "Project Based Learning",
+    "ATTT": "An toàn thông tin",
+    "HTTT": "Hệ thống thông tin",
+    "CNPM": "Công nghệ phần mềm"
 }
 
-# Khởi tạo PhoBERT
-phobert_tokenizer = AutoTokenizer.from_pretrained("vinai/phobert-base", use_fast=False)
-phobert_model = AutoModel.from_pretrained("vinai/phobert-base")
+# Hàm để mở rộng các từ viết tắt trong văn bản
+def expand_abbreviations(text, abbreviation_dict):
+    words = text.split()
+    expanded_words = [abbreviation_dict.get(word.upper(), word) for word in words]
+    return " ".join(expanded_words)
 
-def encode_sentence(sentence, tokenizer, model):
-    """
-    Mã hóa câu sử dụng PhoBERT và trả về vector ngữ nghĩa
-    """
-    # Thay thế từ viết tắt bằng nghĩa đầy đủ
-    for abbr, full_form in abbreviation_dict.items():
-        sentence = sentence.replace(abbr, full_form)
-    
-    tokens = tokenizer.encode(sentence, return_tensors='pt', truncation=True, max_length=128)
+# Hàm tiền xử lý văn bản để mở rộng các từ viết tắt và chuẩn hóa văn bản
+def preprocess_text(text):
+    text = text.lower()  # Chuyển thành chữ thường
+    text = re.sub(r'[^\w\s]', '', text)  # Loại bỏ dấu câu
+    return expand_abbreviations(text, abbreviation_dict)  # Mở rộng từ viết tắt
+
+# Khởi tạo PhoBERT để xử lý ngôn ngữ tự nhiên
+tokenizer = AutoTokenizer.from_pretrained("vinai/phobert-base-v2")
+model = AutoModel.from_pretrained("vinai/phobert-base-v2")
+
+# Hàm Mean Pooling để lấy embedding của câu
+def mean_pooling(model_output, attention_mask):
+    token_embeddings = model_output.last_hidden_state  # (batch_size, sequence_length, hidden_size)
+    input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+    return torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+
+# Hàm mã hóa câu thành embeddings sử dụng PhoBERT
+def encode_sentence(sentence):
+    sentence = preprocess_text(sentence)  # Chuyển đổi viết tắt trước khi mã hóa
+    inputs = tokenizer(sentence, return_tensors='pt', truncation=True, max_length=128, padding=True)
     with torch.no_grad():
-        output = model(tokens)
-    
-    return output.last_hidden_state.mean(dim=1).squeeze().numpy()
+        outputs = model(**inputs)
+    return mean_pooling(outputs, inputs['attention_mask'])
 
-@search_bp.route('/search', methods=['GET'])
-def search_ontology_classes():
-    os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-    # Lấy câu truy vấn từ request
-    query_sentence = request.args.get('query', None)
-    top_k = int(request.args.get('top_k', 5))
+# Định nghĩa route API cho tìm kiếm
+@search_bp.route('/search', methods=['POST'])
+def search():
+    try:
+        # Nhận từ khóa tìm kiếm từ request
+        data = request.get_json()
+        search_query = data.get('query', '')
 
-    if not query_sentence:
-        return jsonify({'error': 'Missing query parameter.'}), 400
+        # Truy vấn lấy thông tin các môn học và các quan hệ ngữ nghĩa bổ sung
+        query = """
+          MATCH (ancestor:Resource {uri: 'http://localhost/ontologies/2024/10/11/edu_program#monHoc'})
+          MATCH (n:Resource)-[:rdfs__subClassOf*]->(ancestor)
+          MATCH (instance:Resource)-[:rdf__type]->(n)
+          OPTIONAL MATCH (instance)-[:ns0__coNoiDung|:ns0__songHanh|:ns0__noiDungCua|:ns0__tienQuyet|:ns0__hocTruoc|:ns0__thuocChuyenNganh]->(relatedInstance)
+          RETURN DISTINCT instance.ns0__maMonHoc AS code, instance.rdfs__label AS courseName, elementId(instance) AS elementId,
+                          collect(DISTINCT relatedInstance) AS relatedInstances
+        """
 
-    # Thay thế từ viết tắt trong câu truy vấn
-    for abbr, full_form in abbreviation_dict.items():
-        query_sentence = query_sentence.replace(abbr, full_form)
+        # Chạy truy vấn và lấy kết quả thông qua API
+        results = execute_query(query)
 
-    # Truy vấn để lấy thông tin các môn học
-    query = """
-      MATCH (ancestor:Resource {rdfs__label: 'Môn học'})
-      MATCH (n:Resource)-[:rdfs__subClassOf*]->(ancestor)
-      MATCH (instance:Resource)-[:rdf__type]->(n)
-      RETURN DISTINCT instance.ns0__maMonHoc AS code, instance.rdfs__label AS label
-    """
-    results = execute_query(query, {})
+        # Mã hóa các tên môn học thành embeddings
+        course_embeddings = []
+        for result in results:
+            course_name = result['courseName']
+            expanded_course_name = preprocess_text(course_name)  # Chuyển đổi viết tắt thành dạng đầy đủ
+            embedding = encode_sentence(expanded_course_name)
+            course_embeddings.append((result, embedding))
 
-    # Danh sách môn học và tên (bao gồm cả không dấu và có dấu)
-    subjects = [(result['code'], result['label']) for result in results]
-    subjects_with_unaccented = [(code, label, unidecode.unidecode(label)) for code, label in subjects]
-    labels = [subject[1] for subject in subjects if subject[1]]
+        # Mã hóa từ khóa tìm kiếm thành embedding
+        expanded_search_query = preprocess_text(search_query)  # Chuyển đổi viết tắt thành dạng đầy đủ
+        search_embedding = encode_sentence(expanded_search_query).squeeze(0)
 
-    # Mã hóa các môn học thành vector
-    subject_vectors = [encode_sentence(subject[1], phobert_tokenizer, phobert_model) for subject in subjects]
+        # Tính toán độ tương đồng cosine giữa từ khóa tìm kiếm và các tên môn học
+        similar_results = []
+        keyword = "PBL"
+        for result, embedding in course_embeddings:
+            embedding = embedding.squeeze(0)
+            similarity = F.cosine_similarity(search_embedding, embedding, dim=0).item()
+            # Thêm trọng số cho kết quả chứa từ khóa chính xác
+            if keyword.lower() in result['courseName'].lower():
+                similarity += 0.1
+            result['similarity'] = similarity
+            similar_results.append(result)
 
-    # Sử dụng FAISS để lập chỉ mục và tìm kiếm ngữ nghĩa
-    dimension = subject_vectors[0].shape[0]
-    index = faiss.IndexFlatIP(dimension)  # Sử dụng chỉ số IP để tính độ tương đồng cosine
-    subject_vectors_np = np.array(subject_vectors).astype('float32')
-    # Chuẩn hóa vector để tính cosine similarity
-    faiss.normalize_L2(subject_vectors_np)
-    index.add(subject_vectors_np)
+        # Sắp xếp kết quả theo độ tương đồng giảm dần và lấy top 10 kết quả
+        sorted_filtered_results = sorted(similar_results, key=lambda x: x['similarity'], reverse=True)[:10]
 
-    # Mã hóa câu truy vấn
-    query_vector = encode_sentence(query_sentence, phobert_tokenizer, phobert_model).astype('float32')
-    # Chuẩn hóa vector truy vấn
-    faiss.normalize_L2(query_vector.reshape(1, -1))
-    distances, indices = index.search(np.array([query_vector]), top_k)
-    
-    results = []
-    seen_labels = set()
-    for i, idx in enumerate(indices[0]):
-        label = labels[idx]
-        code = subjects[idx][0]
-        
-        if label not in seen_labels:
-            results.append({'label': label, 'code': code, 'score': float(distances[0][i])})
-            seen_labels.add(label)
-    
-    # Sắp xếp kết quả theo điểm số từ cao đến thấp
-    results = sorted(results, key=lambda x: x['score'], reverse=True)
-    
-    return jsonify({'results': results}), 200
+        # Trả về kết quả dưới dạng JSON, bao gồm cả elementId và courseName
+        response = [{
+            'elementId': result['elementId'],
+            'rdfs__label': result['courseName'],
+            'similarity': result['similarity']
+        } for result in sorted_filtered_results]
+
+        return jsonify(response)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500

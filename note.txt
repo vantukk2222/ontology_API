@@ -88,6 +88,8 @@ ChildClass	AncestorClass
 "http://localhost/ontologies/2024/10/11/edu_program#noiDungHttt"	"http://localhost/ontologies/2024/10/11/edu_program#noiDungMonHoc"
 
 
+MATCH (n)
+DETACH DELETE n
 
 
 cd C:\Users\Admin\.Neo4jDesktop\relate-data\dbmss\dbms-9d993653-28c5-430f-afd1-dcbcc0a517fe\bin
@@ -96,14 +98,26 @@ neo4j-admin database dump edu-db --to-path=C:\Users\Admin\neo4j-dumps
 
 CREATE CONSTRAINT ON (u:User) ASSERT u.username IS UNIQUE;
 
-CREATE (u:User {
+CREATE (u1:User {
     username: 'user1',
     password: '$2a$10$c.cjgghusl29HgSYtio7JOrN70skseEOoTH5cPeTvbs80z4kINLEC',
-    role: 'customer'
+    role: 'user'
+});
+
+CREATE (u2:User {
+    username: 'user2',
+    password: '$2a$10$c.cjgghusl29HgSYtio7JOrN70skseEOoTH5cPeTvbs80z4kINLEC',
+    role: 'user'
+});
+
+CREATE (admin:User {
+    username: 'admin',
+    password: '$2a$10$c.cjgghusl29HgSYtio7JOrN70skseEOoTH5cPeTvbs80z4kINLEC',
+    role: 'admin'
 });
 
 CREATE (uc:UserCourse {
     user_id: 'user1_id_here',
     course_id: 'course1_id_here',
-    status: 'completed'
+    status: 'hoàn thành'
 });
