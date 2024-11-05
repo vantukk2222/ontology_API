@@ -57,7 +57,7 @@ def search():
 
         # Truy vấn lấy thông tin các môn học và các quan hệ ngữ nghĩa bổ sung
         query = """
-          MATCH (ancestor:Resource {uri: 'http://localhost/ontologies/2024/10/11/edu_program#monHoc'})
+          MATCH (ancestor:Resource {rdfs__label: 'Môn học'})
           MATCH (n:Resource)-[:rdfs__subClassOf*]->(ancestor)
           MATCH (instance:Resource)-[:rdf__type]->(n)
           OPTIONAL MATCH (instance)-[:ns0__coNoiDung|:ns0__songHanh|:ns0__noiDungCua|:ns0__tienQuyet|:ns0__hocTruoc|:ns0__thuocChuyenNganh]->(relatedInstance)
